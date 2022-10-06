@@ -9,7 +9,8 @@ const Home = () => {
                     <img src='https://upload.wikimedia.org/wikipedia/en/4/46/Pokemon_Go.png' alt='image' />
                 </div>
                 <div className='select-btn'>
-                    <a href='/pokelist'>Let's get started...</a>
+                    <Link to='/pokelist'>Let's get started...</Link>
+                    <Link to='/fighting'>Just let me fight!...</Link>
                 </div>
             </div>
         </div>
