@@ -1,0 +1,44 @@
+.pokefight-battle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.btn button {
+    background-color: rgba(12, 78, 131, 0.9);
+    color: black;
+    padding: 6px 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.poke-field {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.poke-info {
+    padding: 2rem;
+}
+
+.poke-info-link {
+    color: black;
+    font-weight: bold;
+}
+
+.poke-image img {
+    padding: 1rem;
+    animation: rotatepoke 1s linear infinite;
+}
+
+@keyframes rotatepoke {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}

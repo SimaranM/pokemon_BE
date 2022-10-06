@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const PokemonList = ({ data }) => {
@@ -9,8 +10,8 @@ const PokemonList = ({ data }) => {
     }, []);
 
     return (
-        <div>
-            <div>
+        <div className='main-container'>
+            <div className='search-container'>
                 <lable>
                     <h3>Search Your Pokemon</h3>
                 </lable>
@@ -29,10 +30,10 @@ const PokemonList = ({ data }) => {
                         })
                         .map((e, index) => {
                             return (
-                                <div>
-                                    <p key={index}>
+                                <div className='pokename'>
+                                    <Link exact to={`/pokemon/${e.id}`}>
                                         <p>{e.name.english}</p>
-                                    </p>
+                                    </Link>
                                 </div>
                             );
                         })}
@@ -40,5 +41,4 @@ const PokemonList = ({ data }) => {
         </div>
     );
 };
-
 export default PokemonList;

@@ -16,43 +16,68 @@ const PokemonFight = () => {
             .catch((err) => console.log(err));
     };
 
+    console.log(pokemon);
+
     useEffect(() => {
         fetchPokemon();
     }, []);
 
-    const PlayerOneSelect = (e) => {
+    const playerOneSelect = (e) => {
         const selectedPokemon = pokemon.find((poke) => {
-            return poke.name === e.target.value
-        })
+            return poke.name.english === e.target.value;
+        });
         setPlayer1(selectedPokemon);
     };
 
-    const PlayerTwoSelect = (e) => {
+    const playerTwoSelect = (e) => {
         const selectedPokemon = pokemon.find((poke) => {
-            return poke.name === e.target.value
-        })
-        setPlayer1(selectedPokemon);
+            return poke.name.english === e.target.value;
+        });
+        setPlayer2(selectedPokemon);
     };
 
-    console.log("Test")
+    const fight = (e) => {
+        console.log(player1, player2);
+        while (true) {
+            player1.base.HP -= player2.base.Attack;
+            player2.base.HP -= player1.base.Attack;
+
+            if (player1.base.HP <= 0) {
+                setResult(player2);
+                return;
+            }
+            if (player2.base.HP <= 0) {
+                setResult(player1);
+                return;
+            }
+        }
+    };
 
     return (
-        <div className="FightingGround">
-            <div ClassName="PlayerOne">
-                <lable>
+        <div className='main-container'>
+            <div className='FightingGround'>
+                <div className='PlayerOne'>
                     <h3>Select Pokemon 1</h3>
-                </lable>
-                <select placeholder='Select your Pokemon' onChange={PlayerOneSelect}>
-                    <option value=""></option>
-                </select>
-            </div>
-            <div ClassName="PlayerTwo">
-                <lable>
+                    <select onChange={playerOneSelect}>
+                        <option value='empty'>Select your Pokemon</option>
+                        {pokemon.map((poke) => {
+                            return <option key={poke.id}> {poke.name.english} </option>;
+                        })}
+                    </select>
+                </div>
+                <div className='PlayerTwo'>
                     <h3>Select Pokemon 2</h3>
-                </lable>
-                <select placeholder='Select your Pokemon' onChange={PlayerTwoSelect}>
-                    <option value=""></option>
-                </select>
+                    <select onChange={playerTwoSelect}>
+                        <option value='empty'>Select your Pokemon</option>
+                        {pokemon.map((poke) => {
+                            return <option key={poke.id}> {poke.name.english} </option>;
+                        })}
+                    </select>
+                </div>
+                <div className='btn'>
+                    <button onClick={fight}> fight </button>
+                    {result && <p> The Winner is {result.name.english}</p>}
+                </div>
             </div>
         </div>
     );
