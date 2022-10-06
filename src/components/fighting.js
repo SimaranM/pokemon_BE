@@ -34,6 +34,8 @@ const PokemonFight = () => {
         setPlayer1(selectedPokemon);
     };
 
+    console.log("Test")
+
     return (
         <div className="FightingGround">
             <div ClassName="PlayerOne">
