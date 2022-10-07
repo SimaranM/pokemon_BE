@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../App.css";
+import PokeSear from "./PokeSear";
 
-const PokemonList = ({ data }) => {
-    const [search, setSearch] = useState("");
-
-    useEffect(() => {
-        setSearch("");
-    }, []);
+const PokemonList = () => {
+    
 
     return (
-        <div className='main-container'>
-            <div className='search-container'>
+        <div>
+            <PokeSear />
+            {/* <div>
                 <lable>
                     <h3>Search Your Pokemon</h3>
                 </lable>
@@ -30,15 +27,18 @@ const PokemonList = ({ data }) => {
                         })
                         .map((e, index) => {
                             return (
-                                <div className='pokename'>
-                                    <Link exact to={`/pokemon/${e.id}`}>
+                                <div>
+                                    <p key={index}>
                                         <p>{e.name.english}</p>
-                                    </Link>
+                                        
+                                    </p>
                                 </div>
                             );
                         })}
-            </div>
+            </div> */}
         </div>
     );
 };
+
 export default PokemonList;
+
