@@ -1,38 +1,38 @@
-.App {
+.app {
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.main-container {
+    background-image: url("https://wallpapercave.com/wp/FfMjuWn.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.search-container h3 {
+    text-align: center;
+    font-size: 30px;
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.search-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    flex-direction: column;
+    padding: 10px 10px;
 }
 
-.App-link {
-    color: #61dafb;
+input[type="text"] {
+    width: 30%;
+    background-color: rgba(12, 78, 131, 0.9);
+    border: none;
+    border-bottom: 3.5px solid #4d4205;
+    align-self: center;
+    padding: 10px 10px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.pokename {
+    color: black;
+    font-weight: bold;
+    text-align: center;
 }
