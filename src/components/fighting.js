@@ -79,6 +79,8 @@ const PokemonFight = () => {
                     {result && <p> The Winner is {result.name.english}</p>}
                 </div>
             </div>
+            <button onClick={fight}> fight </button>
+            {result && <p> the winner is {result.name.english}</p>}
         </div>
     );
 };

@@ -29,7 +29,7 @@ const App = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='pokelist' element={<PokemonList data={data} />} />
                 <Route path='pokemon/:id' element={<Pokemon data={data} />} />
-                <Route path='pokemon/:id/:info' element={<PokemonInfo />} />
+                <Route path='pokemon/:id/:info' element={<PokemonInfo />} /> 
                 <Route path='/fighting' element={<Fighting data={data} />} />
             </Routes>
         </BrowserRouter>
